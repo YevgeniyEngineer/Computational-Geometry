@@ -1,8 +1,9 @@
 #pragma once
 
-#include "core.h"
+#include "core.hpp"
 
 #include <array>
+#include <cmath>
 #include <cstdint>
 #include <iostream>
 #include <limits>
@@ -117,6 +118,25 @@ template <typename Type, size_t Dimension = DIM3> class Vector
     }
 
     friend float dotProduct(const Vector<Type, Dimension> &v1, const Vector<Type, Dimension> &v2);
+
+    float magnitude() const
+    {
+        float value = 0.0f;
+        for (const auto &coord : coords_)
+        {
+            value += std::pow(coord, 2);
+        }
+        return std::sqrt(value);
+    }
+
+    void normalize()
+    {
+        const auto mag = magnitude();
+        for (auto &value : coords_)
+        {
+            value /= mag;
+        }
+    }
 
   private:
     ArrayType coords_;
