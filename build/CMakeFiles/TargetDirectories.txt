@@ -1,0 +1,2 @@
+/home/yevgeniy/Documents/GitHub/Computational-Geometry/build/CMakeFiles/edit_cache.dir
+/home/yevgeniy/Documents/GitHub/Computational-Geometry/build/CMakeFiles/rebuild_cache.dir
